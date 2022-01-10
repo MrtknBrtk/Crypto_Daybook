@@ -40,57 +40,6 @@ class _FirstPageState extends State<FirstPage> {
 
               onTap: () {},
             ),
-            /*  ExpansionTile(
-              //alta açılan menü
-
-              title: const Text(
-                "GALERİMİZ",
-              ),
-
-              trailing: const Icon(Icons.arrow_downward, color: Colors.orange),
-              children: <Widget>[
-                ListTile(
-                  title: const Text(
-                    "DÖVME",
-                    textAlign: TextAlign.center,
-                  ),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.orange,
-                  ),
-                  onTap: () {
-                    Navigator.pushNamed(context, "/Dovme");
-                  },
-                ),
-                ListTile(
-                  title: const Text(
-                    "PIERCING",
-                    textAlign: TextAlign.center,
-                  ),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.orange,
-                  ),
-                  onTap: () {
-                    Navigator.pushNamed(context, "/pirsing");
-                  },
-                ),
-                ListTile(
-                  title: const Text(
-                    "COVER UP ÇALIŞMALARIMIZ",
-                    textAlign: TextAlign.center,
-                  ),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.orange,
-                  ),
-                  onTap: () {
-                    Navigator.pushNamed(context, "/coverUp");
-                  },
-                ),
-              ],
-            ),
-          */
           ],
         ),
       ),
