@@ -66,6 +66,34 @@ class _KayitState extends State<Kayit> {
                   ),
                 ),
               ),
+              //ad soyad
+              Container(
+                color: Colors.grey,
+                margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
+                child: TextField(
+                  onChanged: (String adsoyad) {
+                    setState(() {});
+                  },
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Adı Soyadı',
+                    labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    ),
+                    suffixStyle: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+
               //sifre 1
               Container(
                 color: Colors.grey,
@@ -120,6 +148,34 @@ class _KayitState extends State<Kayit> {
                   ),
                 ),
               ),
+              //eMail
+              Container(
+                color: Colors.grey,
+                margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
+                child: TextField(
+                  onChanged: (String eMail) {
+                    setState(() {});
+                  },
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'E-Mail',
+                    labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    ),
+                    suffixStyle: const TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              /*
               //sifreleme yöntemi seçimi
               Container(
                 width: double.maxFinite,
@@ -156,6 +212,21 @@ class _KayitState extends State<Kayit> {
                   ],
                 ),
               ),
+            */
+
+              Container(
+                  width: double.maxFinite,
+                  color: Colors.blue,
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  child: TextButton(
+                    child: Text(
+                      "  ONAY KODU AL ",
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
+                    onPressed: () {
+                      //Navigator.pushNamed(context, "/kayit");
+                    },
+                  )),
             ],
           ),
         ),
