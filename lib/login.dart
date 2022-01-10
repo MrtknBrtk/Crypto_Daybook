@@ -89,18 +89,21 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                        color: Colors.blue,
-                        child: TextButton(
-                          child: Text(
-                            "  Giriş Yap  ",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamed(context, "/firstPage");
-                          },
-                        )),
+                      color: Colors.blue,
+                      child: TextButton(
+                        child: Text(
+                          "  Giriş Yap  ",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/firstPage");
+                        },
+                      ),
+                      margin: EdgeInsets.only(right: 10),
+                    ),
                     Container(
                         color: Colors.blue,
                         child: TextButton(

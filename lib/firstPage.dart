@@ -13,6 +13,8 @@ class _FirstPageState extends State<FirstPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("CRYPTO GÜNLÜK"),
+        // ignore: prefer_const_constructors
+        actions: [IconButton(onPressed: () => {}, icon: Icon(Icons.add))],
       ),
       body: Container(),
       drawer: Drawer(
