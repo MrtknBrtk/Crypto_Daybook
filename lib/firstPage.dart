@@ -14,7 +14,13 @@ class _FirstPageState extends State<FirstPage> {
       appBar: AppBar(
         title: const Text("CRYPTO GÜNLÜK"),
         // ignore: prefer_const_constructors
-        actions: [IconButton(onPressed: () => {}, icon: Icon(Icons.add))],
+        actions: [
+          IconButton(
+              onPressed: () => {
+                    Navigator.pushNamed(context, "/yeniGun"),
+                  },
+              icon: const Icon(Icons.add))
+        ],
       ),
       body: Container(),
       drawer: Drawer(

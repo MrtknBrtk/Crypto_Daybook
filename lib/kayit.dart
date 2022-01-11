@@ -10,27 +10,9 @@ class Kayit extends StatefulWidget {
   State<Kayit> createState() => _KayitState();
 }
 
-var sifrelemeler = [];
-// ignore: prefer_typing_uninitialized_variables
-var _value;
-
 class _KayitState extends State<Kayit> {
   @override
   Widget build(BuildContext context) {
-    sifrelemeler = [
-      "08:00",
-      "09:00",
-      "10:00",
-      "11:00",
-      "12:00",
-      "14:00",
-      "15:00",
-      "16:00",
-      "17:00",
-      "18:00",
-      "19:00",
-      "20:00",
-    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text("CRYPTO GÜNLÜK"),
@@ -175,45 +157,6 @@ class _KayitState extends State<Kayit> {
                   ),
                 ),
               ),
-              /*
-              //sifreleme yöntemi seçimi
-              Container(
-                width: double.maxFinite,
-                height: 65,
-                margin: EdgeInsets.only(left: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      "  güvendiğiniz şifreleme yöntemini seçiniz : ",
-                    ),
-                    DropdownButton<String>(
-                      iconEnabledColor: Colors.pink,
-                      items: [
-                        for (var i = 0; i < sifrelemeler.length; i++)
-                          DropdownMenuItem<String>(
-                            value: sifrelemeler[i].toString(),
-                            child: Text(
-                              sifrelemeler[i].toString(),
-                            ),
-                          ),
-                      ],
-                      onChanged: (value) {
-                        setState(() {
-                          _value = value;
-                        });
-                      },
-                      value: _value,
-                      elevation: 2,
-                      isDense: true,
-                      iconSize: 40.0,
-                      dropdownColor: Colors.yellow,
-                    ),
-                  ],
-                ),
-              ),
-            */
-
               Container(
                   width: double.maxFinite,
                   color: Colors.blue,
