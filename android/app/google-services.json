@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "271646330860",
+    "firebase_url": "https://cryptodaybook-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "cryptodaybook",
+    "storage_bucket": "cryptodaybook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271646330860:android:254fc85a29e3172e2dfac9",
+        "android_client_info": {
+          "package_name": "com.example.crypto_gunluk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271646330860-ksb57hb05eq8a02u5j2blg1t70rlag2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2JdqPeDecVKytb_2qxYoPrSiJE6C74Oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271646330860-ksb57hb05eq8a02u5j2blg1t70rlag2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

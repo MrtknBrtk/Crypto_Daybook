@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 
@@ -9,6 +9,7 @@ class YeniGun extends StatefulWidget {
   State<YeniGun> createState() => _YeniGunState();
 }
 
+String yaziYaz = "";
 var sifrelemeler = [];
 // ignore: prefer_typing_uninitialized_variables, unused_element
 var _value;
@@ -31,7 +32,7 @@ class _YeniGunState extends State<YeniGun> {
       appBar: AppBar(
         title: const Text("CRYPTO GÜNLÜK"),
       ),
-      body: Container(
+      body: SizedBox(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
@@ -39,14 +40,17 @@ class _YeniGunState extends State<YeniGun> {
                 margin: const EdgeInsets.only(top: 20),
                 child: const Text("Yeni Bir Gün Daha Yazmaya Nedersin"),
               ),
+              //yazı yazma alanı
               Container(
                 width: double.maxFinite,
                 height: 400,
                 color: Colors.grey,
                 margin: const EdgeInsets.all(20),
                 child: TextField(
-                  onChanged: (String email) {
-                    setState(() {});
+                  onChanged: (String yazi) {
+                    setState(() {
+                      yaziYaz = yazi;
+                    });
                   },
                   keyboardType: TextInputType.multiline,
                   maxLines: null,
@@ -115,3 +119,10 @@ class _YeniGunState extends State<YeniGun> {
     );
   }
 }
+  /*    String b = "";
+                      int a = yaziYaz.length;
+                      for (var i = 0; i < a; i++) {
+                        print(yaziYaz[i].characters);
+                        b = b + yaziYaz[i];
+                      }
+                      print(b);*/

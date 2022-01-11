@@ -157,6 +157,7 @@ class _KayitState extends State<Kayit> {
                   ),
                 ),
               ),
+              //onaykodual
               Container(
                   width: double.maxFinite,
                   color: Colors.blue,

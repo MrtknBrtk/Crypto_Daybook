@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class FirstPage extends StatefulWidget {
@@ -26,6 +28,7 @@ class _FirstPageState extends State<FirstPage> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
+            //günlük ana sayfaya gider
             ListTile(
               tileColor: Colors.white,
               //açılmayan
@@ -36,6 +39,7 @@ class _FirstPageState extends State<FirstPage> {
 
               onTap: () {},
             ),
+            //yeni gün yaz
             ListTile(
               tileColor: Colors.white,
               //açılmayan
@@ -44,7 +48,35 @@ class _FirstPageState extends State<FirstPage> {
                 "YENİ GÜN YAZ",
               ),
 
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, "/yeniGun");
+              },
+            ),
+            //ayarlar
+            ListTile(
+              tileColor: Colors.white,
+              //açılmayan
+
+              title: const Text(
+                "AYARLAR",
+              ),
+
+              onTap: () {
+                //Navigator.pushNamed(context, "/yeniGun");
+              },
+            ),
+            //iletişim
+            ListTile(
+              tileColor: Colors.white,
+              //açılmayan
+
+              title: const Text(
+                "İLETİŞİM",
+              ),
+
+              onTap: () {
+                //Navigator.pushNamed(context, "/yeniGun");
+              },
             ),
           ],
         ),
