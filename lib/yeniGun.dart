@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:crypto_gunluk/fonksiyonlar.dart';
 import 'package:flutter/material.dart';
 
 class YeniGun extends StatefulWidget {
@@ -109,6 +110,7 @@ class _YeniGunState extends State<YeniGun> {
                       style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
                     onPressed: () {
+                      domuzCoz(yaziYaz);
                       //Navigator.pushNamed(context, "/kayit");
                     },
                   )),
@@ -119,10 +121,3 @@ class _YeniGunState extends State<YeniGun> {
     );
   }
 }
-  /*    String b = "";
-                      int a = yaziYaz.length;
-                      for (var i = 0; i < a; i++) {
-                        print(yaziYaz[i].characters);
-                        b = b + yaziYaz[i];
-                      }
-                      print(b);*/
