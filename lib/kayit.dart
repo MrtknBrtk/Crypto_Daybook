@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_import
+// ignore_for_file: non_constant_identifier_names
 
-import 'package:flutter/cupertino.dart';
+import 'dart:math';
+
+import 'package:crypto_gunluk/fonksiyonlarVeSorgular.dart';
 import 'package:flutter/material.dart';
 
 class Kayit extends StatefulWidget {
@@ -9,6 +11,14 @@ class Kayit extends StatefulWidget {
   @override
   State<Kayit> createState() => _KayitState();
 }
+
+String KADI = "",
+    AdSOYAD = "",
+    Sifre_1 = "",
+    Sifre_2 = "",
+    EMAIL = "",
+    OnayKODU = "";
+late int RastgeleSayi;
 
 class _KayitState extends State<Kayit> {
   @override
@@ -24,13 +34,15 @@ class _KayitState extends State<Kayit> {
               //kAdi
               Container(
                 color: Colors.grey,
-                margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
+                margin: const EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
                 child: TextField(
                   onChanged: (String kAdi) {
-                    setState(() {});
+                    setState(() {
+                      KADI = kAdi;
+                    });
                   },
                   obscureText: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'kullanici Adi',
                     labelStyle: TextStyle(
@@ -38,11 +50,11 @@ class _KayitState extends State<Kayit> {
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                     ),
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.person,
                       color: Colors.black,
                     ),
-                    suffixStyle: const TextStyle(
+                    suffixStyle: TextStyle(
                       color: Colors.black,
                     ),
                   ),
@@ -51,13 +63,15 @@ class _KayitState extends State<Kayit> {
               //ad soyad
               Container(
                 color: Colors.grey,
-                margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
+                margin: const EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
                 child: TextField(
                   onChanged: (String adsoyad) {
-                    setState(() {});
+                    setState(() {
+                      AdSOYAD = adsoyad;
+                    });
                   },
                   obscureText: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Adı Soyadı',
                     labelStyle: TextStyle(
@@ -65,11 +79,11 @@ class _KayitState extends State<Kayit> {
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                     ),
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.person,
                       color: Colors.black,
                     ),
-                    suffixStyle: const TextStyle(
+                    suffixStyle: TextStyle(
                       color: Colors.black,
                     ),
                   ),
@@ -82,10 +96,12 @@ class _KayitState extends State<Kayit> {
                 margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
                 child: TextField(
                   onChanged: (String sifre1) {
-                    setState(() {});
+                    setState(() {
+                      Sifre_1 = sifre1;
+                    });
                   },
                   obscureText: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     labelStyle: TextStyle(
@@ -93,11 +109,11 @@ class _KayitState extends State<Kayit> {
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                     ),
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.person,
                       color: Colors.black,
                     ),
-                    suffixStyle: const TextStyle(
+                    suffixStyle: TextStyle(
                       color: Colors.black,
                     ),
                   ),
@@ -106,13 +122,15 @@ class _KayitState extends State<Kayit> {
               //sifre 2
               Container(
                 color: Colors.grey,
-                margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
+                margin: const EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
                 child: TextField(
                   onChanged: (String sifre2) {
-                    setState(() {});
+                    setState(() {
+                      Sifre_2 = sifre2;
+                    });
                   },
                   obscureText: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'tekrar Password',
                     labelStyle: TextStyle(
@@ -120,11 +138,11 @@ class _KayitState extends State<Kayit> {
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                     ),
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.person,
                       color: Colors.black,
                     ),
-                    suffixStyle: const TextStyle(
+                    suffixStyle: TextStyle(
                       color: Colors.black,
                     ),
                   ),
@@ -133,13 +151,15 @@ class _KayitState extends State<Kayit> {
               //eMail
               Container(
                 color: Colors.grey,
-                margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
+                margin: const EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
                 child: TextField(
                   onChanged: (String eMail) {
-                    setState(() {});
+                    setState(() {
+                      EMAIL = eMail;
+                    });
                   },
                   obscureText: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'E-Mail',
                     labelStyle: TextStyle(
@@ -147,11 +167,11 @@ class _KayitState extends State<Kayit> {
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
                     ),
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.person,
                       color: Colors.black,
                     ),
-                    suffixStyle: const TextStyle(
+                    suffixStyle: TextStyle(
                       color: Colors.black,
                     ),
                   ),
@@ -163,12 +183,25 @@ class _KayitState extends State<Kayit> {
                   color: Colors.blue,
                   margin: EdgeInsets.only(left: 10, right: 10),
                   child: TextButton(
-                    child: Text(
+                    child: const Text(
                       "  ONAY KODU AL ",
                       style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
                     onPressed: () {
-                      //Navigator.pushNamed(context, "/kayit");
+                      if (KADI == "" ||
+                          AdSOYAD == "" ||
+                          Sifre_1 == "" ||
+                          Sifre_2 == "" ||
+                          EMAIL == "") {
+                        debugPrint("boşdeger var");
+                      } else {
+                        if (Sifre_1 == Sifre_2) {
+                          sayiuret();
+                          Navigator.pushNamed(context, "/onayKoduDogrula");
+                        } else {
+                          debugPrint("sifeler uymuyor");
+                        }
+                      }
                     },
                   )),
             ],
@@ -176,5 +209,16 @@ class _KayitState extends State<Kayit> {
         ),
       ),
     );
+  }
+
+  //dogrulama kodu için Sayı üreteci
+
+  Future sayiuret() async {
+    int min = 100000;
+    int max = 999999;
+    var randomizer = new Random();
+    RastgeleSayi = (min + randomizer.nextInt(max - min));
+    print(RastgeleSayi);
+    mailGonder(EMAIL, RastgeleSayi);
   }
 }

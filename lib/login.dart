@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -8,6 +9,8 @@ class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
 }
+
+String kullaniciADI = "", kullaniciPASS = "";
 
 class _LoginState extends State<Login> {
   @override
@@ -29,13 +32,15 @@ class _LoginState extends State<Login> {
                   color: Colors.grey,
                   margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 10.0),
                   child: TextField(
-                    onChanged: (String email) {
-                      setState(() {});
+                    onChanged: (String kullaniciAdi) {
+                      setState(() {
+                        kullaniciADI = kullaniciAdi;
+                      });
                     },
                     obscureText: false,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'e-meil',
+                      labelText: 'Kullanici Adi',
                       labelStyle: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -60,7 +65,9 @@ class _LoginState extends State<Login> {
                     margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 20.0),
                     child: TextField(
                       onChanged: (String password) {
-                        setState(() {});
+                        setState(() {
+                          kullaniciPASS = password;
+                        });
                       },
                       obscureText: true,
                       decoration: InputDecoration(
@@ -99,7 +106,7 @@ class _LoginState extends State<Login> {
                           style: TextStyle(color: Colors.black),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, "/firstPage");
+                          LoginSorgu();
                         },
                       ),
                       margin: EdgeInsets.only(right: 10),
@@ -123,5 +130,26 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  // ignore: non_constant_identifier_names
+  Future LoginSorgu() async {
+    final db = FirebaseDatabase.instance.ref();
+    db.child("KisiSayac/Ksayac/Sayac").once().then((value) {
+      int a = int.parse('${value.snapshot.value}');
+      for (var i = 0; i < a; i++) {
+        db.child(i.toString() + "/Bilgiler/Kadi").once().then((value) {
+          String glnkadi = '${value.snapshot.value}';
+          if (glnkadi == kullaniciADI) {
+            db.child(i.toString() + "/Bilgiler/Sifre").once().then((value) {
+              String glnSifre = '${value.snapshot.value}';
+              if (glnSifre == kullaniciPASS) {
+                Navigator.pushNamed(context, "/firstPage");
+              } else {}
+            });
+          } else {}
+        });
+      }
+    });
   }
 }

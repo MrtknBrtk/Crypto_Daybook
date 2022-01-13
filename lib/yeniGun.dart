@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:crypto_gunluk/fonksiyonlar.dart';
+import 'package:crypto_gunluk/fonksiyonlarSifrelemeler.dart';
 import 'package:flutter/material.dart';
 
 class YeniGun extends StatefulWidget {
@@ -19,8 +19,8 @@ class _YeniGunState extends State<YeniGun> {
   @override
   Widget build(BuildContext context) {
     sifrelemeler = [
-      "sifreleme 1",
-      "sifreleme 2",
+      "Domuz Bağı",
+      "RSA Sifreleme",
       "sifreleme 3",
       "sifreleme 4",
       "sifreleme 5",
@@ -110,7 +110,7 @@ class _YeniGunState extends State<YeniGun> {
                       style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
                     onPressed: () {
-                      domuzCoz(yaziYaz);
+                      rsaCoz(yaziYaz);
                       //Navigator.pushNamed(context, "/kayit");
                     },
                   )),

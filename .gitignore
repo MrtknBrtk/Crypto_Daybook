@@ -39,7 +39,8 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
-app.google-services.json
+android/app/google-services.json
+android/lib/mailBilgileri.dart
 
 # Android Studio will place build artifacts here
 /android/app/debug
